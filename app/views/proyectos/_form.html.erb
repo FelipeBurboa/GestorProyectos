@@ -1,19 +1,19 @@
-<div class="container d-flex align-items-center justify-content-center">
+<div class="d-flex aligns-items-center justify-content-center">
 <%= form_with(model: proyecto) do |form| %>
-<div class="row align-items-center justify-content-center">
+<div class="d-flex aligns-items-center justify-content-center">
   <% if proyecto.errors.any? %>
     <div style="color: grey">
-      <h5 class="row justify-content-center align-items-center">Hubieron <%= pluralize(proyecto.errors.count, "errores") %> al querer crear el proyecto!</h5>
+      <h5 class="d-flex aligns-items-center justify-content-center">Hubieron <%= pluralize(proyecto.errors.count, "errores") %> al querer crear el proyecto!</h5>
       <ul>
         <% proyecto.errors.each do |error| %>
-          <li class="row justify-content-center align-items-center" style="color: red" ><%= error.full_message %></li>
+          <li class="d-flex aligns-items-center justify-content-center" style="color: red" ><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
-  </div>
 <% end %>
+</div>
 
-<div class="row align-items-center justify-content-center mt-5" style="width: 18rem;">
+<div class="align-items-center justify-content-center" style="width:450px">
   <div>
     <%= form.label :nombre, class: "form-label" %>
     <%= form.text_field :nombre, class: "form-control" %>
@@ -38,9 +38,8 @@
     <%= form.label :estado, class: "form-label" %>
     <%= form.select(:estado, ["Propuesta","En Progreso","Terminado"], {selected: "Propuesta"}, {class: "form-select"} )%>
   </div>
-
-  <div class="container d-flex align-items-center justify-content-center"> 
-  <br><br><br><br>
+  <br>
+  <div class="d-flex aligns-items-center justify-content-center"> 
     <%= form.submit "Crear Proyecto", class: "btn btn-primary" %>
   </div>
 </div>

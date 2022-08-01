@@ -1,18 +1,27 @@
-<h1 class="row justify-content-center align-items-center">Proyectos</h1>
-<p style="color: green"><%= notice %></p>
-<div class="d-flex justify-content-start">
+<h1 class="d-flex aligns-items-center justify-content-center">Proyectos</h1>
+<p style="color: green" class="d-flex aligns-items-center justify-content-center"><%= notice %></p>
+<div class="d-flex aligns-items-center justify-content-center">
    <form>
-  <label for="estado" class="form-label">Opciones de filtrado</label>
+  <label for="estado" class="form-label d-flex aligns-items-center justify-content-center">Opciones de filtrado</label>
+  <div class="row aligns-items-center justify-content-center">
+  <div class="col" style="width:225px">
         <select class="form-control" name="estado">
           <option value="">Mostrar todos</option>
           <option value="Propuesta">Propuesta</option>
           <option value="En Progreso">En Progreso</option>
           <option value="Terminado">Terminado</option>
         </select>
+</div>
+<div class="col">
         <button class="btn btn-primary" type="submit">Filtrar</button>
+</div>
+  </div>
   </form>
 </div>
 
+<br>
+
+<div class="d-flex aligns-items-center justify-content-center container-fluid">
  <table class="table table-dark">
  <thead>
   <tr>
@@ -35,11 +44,12 @@
   <% end %>
 </tbody>
 </table>
-
-<div class="container d-flex align-items-center justify-content-center">
-<%= link_to "Nuevo proyecto", new_proyecto_path, class: "btn btn-primary" %>
 </div>
 
+<div class="d-flex aligns-items-center justify-content-center">
+<%= link_to "Nuevo proyecto", new_proyecto_path, class: "btn btn-primary" %>
+</div>
+<br>
 
 
 
