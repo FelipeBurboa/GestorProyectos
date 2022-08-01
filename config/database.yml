@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  username: <%= Rails.application.credentials.db[:username] %>
+  password: <%= Rails.application.credentials.db[:password] %>
+  host: 127.0.0.1
+  port: 5432
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: gestorproyectos_development
+
+test:
+  <<: *default
+  database: gestorproyectos_test
+
+
+production:
+  <<: *default
+  database: gestorproyectos_production
+  username: myapp
+  password: <%= ENV["EDIFICIOS_DATABASE_PASSWORD"] %>

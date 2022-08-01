@@ -1,0 +1,45 @@
+<h1 class="row justify-content-center align-items-center">Proyectos</h1>
+<p style="color: green"><%= notice %></p>
+<div class="d-flex justify-content-start">
+   <form>
+  <label for="estado" class="form-label">Opciones de filtrado</label>
+        <select class="form-control" name="estado">
+          <option value="">Mostrar todos</option>
+          <option value="Propuesta">Propuesta</option>
+          <option value="En Progreso">En Progreso</option>
+          <option value="Terminado">Terminado</option>
+        </select>
+        <button class="btn btn-primary" type="submit">Filtrar</button>
+  </form>
+</div>
+
+ <table class="table table-dark">
+ <thead>
+  <tr>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Fecha Comienzo</th>
+      <th>Fecha Termino</th>
+      <th>Estado</th>
+  </tr> 
+</thead>
+<tbody>
+<% @proyectos.each do |proyecto| %>
+  </tr>
+    <td> <%= proyecto.nombre %> </td>
+    <td> <%= proyecto.descripcion %> </td>
+    <td> <%= proyecto.fechacomienzo %> </td>
+    <td> <%= proyecto.fechatermino %> </td>
+    <td> <%= proyecto.estado %> </td>
+  </tr>
+  <% end %>
+</tbody>
+</table>
+
+<div class="container d-flex align-items-center justify-content-center">
+<%= link_to "Nuevo proyecto", new_proyecto_path, class: "btn btn-primary" %>
+</div>
+
+
+
+
